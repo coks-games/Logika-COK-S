@@ -1,55 +1,85 @@
-# JinwooStream Gamification Strategy (The "Why")
+# JinwooStream Social & Content Ecosystem (The "Fame" Update)
 
-## 🎯 Core Philosophy: "Build Your Strength"
+## 🧠 Core Philosophy
 
-Mengadopsi konsep _Solo Leveling_, user diajak untuk "Level Up" dari **E-Hunter** sampai **National Level Hunter**. Ini bukan sekadar hiasan, tapi sistem **Retensi** dan **Loyalty**.
-
----
-
-## 💎 Manfaat Bagi Owner Web (Anda)
-
-Kenapa fitur ini penting untuk kelangsungan website?
-
-### 1. Retention (User Balik Lagi)
-
-- **Mekanisme:** _Daily Login Quest_.
-- **Efek:** User merasa "sayang" kalau putus streak. Mereka akan buka web tiap hari minimal untuk klik Claim.
-- **Hasil:** Traffic stabil, bounce rate turun, ranking SEO naik.
-
-### 2. Engagement (Web Jadi "Hidup")
-
-- **Mekanisme:** _Watch 1 Episode_ & _Leave a Comment_.
-- **Efek:** User tidak cuma nonton lalu pergi (Ghost). Mereka dipaksa berinteraksi (Nonton sampai habis, Tulis Komen) demi EXP.
-- **Hasil:** Kolom komentar ramai, durasi visit (Time on Site) lama. Google suka web yang engage-nya tinggi.
-
-### 3. Community Loyalty (Fanbase Kuat)
-
-- **Mekanisme:** _Rank System (E-Hunter s/d S-Hunter)_.
-- **Efek:** User bangga dengan status mereka. Mereka akan pamer ke teman atau screenshot profile mereka.
-- **Hasil:** Marketing gratis dari user (Word of Mouth).
+Transformasi dari "Platform Nonton" menjadi "Social Platform Anime".  
+Karena fitur premium (No Ads/Download VIP) tidak relevan, kita beralih ke benefit **Status Sosial & Eksistensi**. User berlomba untuk menjadi **Terkenal (Influencer)** dan **Terkuat (Top Rank)**.
 
 ---
 
-## 🎁 Manfaat Bagi User (Member)
+## 1. Social Graph System (The Connection)
 
-Apa untungnya capek-capek cari EXP? (Ini yang perlu kita janjikan kedepannya):
+Membangun jaringan antar Hunter.
 
-| Rank Class   | Syarat EXP | Benefit (Ide Implementasi)                                       |
-| :----------- | :--------- | :--------------------------------------------------------------- |
-| **E-Hunter** | 0          | Akses Streaming Standar (720p).                                  |
-| **D-Hunter** | 100        | Unlock **Download** Resolution 480p.                             |
-| **C-Hunter** | 300        | Unlock **Custom Avatar** / Bingkai Profile.                      |
-| **B-Hunter** | 600        | **Request Anime Prioritas** (Masuk list VIP request).            |
-| **A-Hunter** | 1000       | **No Ads** (Bebas iklan popup).                                  |
-| **S-Hunter** | 2000       | **Verified Badge** (Centang Biru) & Akses Server VIP (Tercepat). |
+- **Follow System:** User A follow User B.
+- **Friend System (Mutua):** Terjadi otomatis jika **Saling Follow**.
+- **Benefits:**
+  - Melihat aktivitas teman.
+  - Persaingan di _Circle Leaderboard_.
+
+## 2. Leaderboard System (The Arena)
+
+Halaman khusus `/leaderboard` dengan 3 kategori tab:
+
+- **🌍 Global Rank:** Urutan berdasarkan **EXP / Hunter Rank** (E s/d National Level).
+- **👑 Popularity Rank:** Urutan berdasarkan **Jumlah Follower**. (Influencer Chart).
+- **🤝 Circle Rank:** Urutan berdasarkan EXP tapi **Hanya di antara Teman Sendiri**.
+
+### 🏆 Follower Milestones (Badges)
+
+Reward visual untuk jumlah follower tertentu (Tampil di Profile/Leaderboard):
+
+- **100:** 🥉 Local Celeb
+- **250:** 🥈 Rising Star
+- **500:** 🥇 Star Hunter
+- **1k:** 💎 Idol
+- **5k:** 🔥 Supernova
+- **10k:** 👑 King/Queen
+- **...10M:** 🌌 National Treasure
 
 ---
 
-## 🚀 Next Step Recommendation
+## 3. Blog / Content Creator System (The Voice)
 
-Agar user tidak "Bingung" seperti Anda sekarang, kita perlu:
+User bisa menjadi kontributor konten (Jurnalis Anime).
 
-1.  **Halaman "Rank Benefits":** Menjelaskan tabel di atas agar user terpacu mengejar rank.
-2.  **Notifikasi Level Up:** Saat naik rank, kasih selamat dan kasih tahu fitur apa yang terbuka.
+### 🔒 Access Control (Rank Gate)
 
-_Gamification makes watching anime feel like playing an RPG. That is the secret sauce._
+- **E-Hunter:** ❌ **Viewer Only**. (Bisa baca, like, share, report).
+- **D-Hunter (+):** ✅ **Creator Access**. (Bisa tulis & upload blog).
+
+### 🛡️ Moderation System (The Law)
+
+Menjaga profesionalisme tanpa membebani Admin.
+
+1.  **Strict Rule:** Konten Wajib Anime/Jejepangan.
+2.  **Community Policing:** Tombol "Report: Non-Anime".
+    - _Threshold:_ 5 Report = **Auto-Takedown (Hidden)**.
+3.  **Admin Nuke:** Hapus permanen + Ban fitur blog user.
+
+### 📊 Dashboard Integration
+
+Sidebar Menu untuk Creator:
+
+1.  **Upload Blog:**
+    - Editor UI (Judul, Thumbnail, Body, Tag).
+    - Validation: Min 1 image, min X words.
+2.  **View Blog (Analytics):**
+    - List artikel yang pernah dibuat.
+    - **Live Stats:** Views 👁️, Likes ❤️, Comments 💬, Shares 🔗.
+    - Actions: Edit / Delete.
+
+---
+
+## 4. Technical Roadmap
+
+1.  **Database:**
+    - `Follow` Model (followerId, followingId).
+    - `Blog` Model (title, content, author, stats, reports).
+2.  **API:**
+    - Social: Follow/Unfollow, Get Followers.
+    - Blog: CRUD endpoints with Rank Checks.
+3.  **Frontend:**
+    - Leaderboard UI.
+    - Blog Editor & Viewer UI.
+    - Profile Upgrade (Show Badges & Follower Count).
